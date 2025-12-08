@@ -1,99 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yuxin Cao</title>
-  <link rel="stylesheet" href="https://latex.vercel.app/style.css">
+  <!-- Restore LaTeX font -->
+  <link rel="stylesheet" href="https://latex.vercel.app/style.css" />
   <style>
-    /* Change visited links to green */
-    a:visited {
-      color: green !important;
+    /* Box sizing + reset */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
     }
-  
-    /* Change link focus outline to green */
-    a:focus {
-      outline-color: green !important;
+
+    header {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 20px;
     }
-  
-    /* Optional: hover and active links */
-    a:hover {
-      color: darkgreen !important;
+
+    header h1 { margin: 0; font-size: 1.25rem; }
+
+    header nav a {
+      white-space: nowrap;
+      margin-left: 12px;
+      text-decoration: none;
+      color: inherit;
+    } { margin-left: 12px; text-decoration: none; color: inherit; }
+
+    /* Fade column */
+    .fade-column {
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
-    a:active {
-      color: limegreen !important;
+
+    .fade-center {
+      height: 70%;
+      width: 20px;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, transparent, white 50%, transparent);
+    }
+
+    .fade-label {
+      position: absolute;
+      transform: rotate(90deg);
+      font-size: 12px;
+      color: #666;
+      pointer-events: none;
+    }
+
+    /* Main layout */
+    .container {
+      width: 100vw;
+      max-width: 100vw;
+      margin: 0;
+      display: grid;
+      grid-template-columns: minmax(250px, 400px) 60px 1fr;
+      gap: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .left-panel {
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .left-panel img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    nav a:visited { color: purple !important; }
+    nav a:hover { color: darkgreen !important; }
+    nav a:focus { outline-color: green !important; }
+    nav a:active { color: limegreen !important; }
+
+    .right-panel section {
+      margin-bottom: 40px;
+    }
+
+    /* Responsive: stack columns on narrow viewports */
+    .img-fade-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .img-fade-wrapper img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      /* TRUE 图片淡出: fade on the right side */
+      -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+      mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    }
+
+    @media (max-width: 800px) {
+      .container { grid-template-columns: 1fr; padding: 16px; }
+      .fade-column { display: none; }
+      header { padding: 0 16px; }
+      .left-panel { padding-bottom: 0; }
+    }
+    footer {
+      text-align: center;
+      font-size: 1.0em; /* smaller text */
+      color: #555;
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Yuxin Cao</h1>
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <a href="#research">Research Areas</a>
+    <a href="#projects">Projects</a>
+    <a href="YuxinCao_CV.pdf" download>CV</a>
+    <a href="#" onclick="alert('Email: carriecaoyx@gmail.com')">Contact</a>
+  </nav>
+</header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <img src="myphoto.jpg" alt="A photo of me" width="200">
-    <p>Hello. This website is working in progress. So you'll probably see sleepless <span style="color: green;">green</span> type of phrases lying around.
-      <p>This is a <span style="color: green;">green</span> word.</p>
-      I'm trying really hard to turn things <span style="color: green;">green</span> here.
+<div class="container">
+  <!-- LEFT -->
+  <div class="left-panel">
+      <img src="photo.jpg" alt="A photo of me" />
 
-      Hello! My name is 操雨欣. 
-      tsʰɑʊ¹ y³ ɕin¹ Yuxin Cao. 
-      I am a recent graduate in Linguistics and trying to pursue more study in the field. 
-      My research interests include meaning of language. 
-      I am passionate about modal logic at the moment].</p>
-  </section>
+    <h2>Yuxin Cao</h2>
+    <p>(*^▽^*) </p>
+      <p>My surname is 操 /tsʰɑʊ55/ and my first name is 雨欣 /y214 ɕin55/. </p>
+  </div>
 
-  <section id="research">
-    <h2>Research Interests</h2>
-    <p>My research focuses on: The</p>
-    <ul>
-      <li>I think about: part and whole.</li>
-      <li>I think about: Mandarin that I spoke.</li>
-      <li>I think about: WOW They rhyme.</li>
-    </ul>
-    <p>I aim to explore these areas further in my PhD studies.</p>
-  </section>
+  <!-- CENTER FADE COLUMN -->
+  <div class="fade-column">
+    <div class="fade-center"></div>
+    <div class="fade-label"></div>
+  </div>
 
-  <section id="publications">
-    <h2>Proceedings & Work</h2>
-    <ul>
-      <li><a href="#">WELL</a> – HI, 2025</li>
-      <li><a href="#">LINKSomelinkhere</a></li>
-    </ul>
-  </section>
+  <!-- RIGHT -->
+  <div class="right-panel">
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>BA Project:</strong> Prosody Clash + <a href="#">link/code</a></li>
-      <li><strong>MA Class Project:</strong> Shanghainese + <a href="#">link/code</a></li>
-    </ul>
-  </section>
+    <section id="AboutMe">
+      <h2>About Me: Hello!</h2>
+      <ul>
+        <li>I am a recent graduate in Linguistics and trying to pursue more study in the field.</li>
+        <li>I am getting myself familiar with modal logic at the moment.</li>
+        <li>I'll make the profile picture larger.</li>
+      </ul>
+    </section>
 
-  <section id="cv">
-    <h2>Curriculum Vitae</h2>
-    <p>You can download my CV here: <a href="YuxinCao_CV.pdf" target="_blank">Download PDF</a></p>
-  </section>
+    <section id="research">
+      <h2>Research Interests: I think about</h2>
+      <ul>
+        <li>Quantification (both in Adults and Children)</li>
+        <li>Part and Whole: When components sacrifice their meaning and is a new entry created when the whole is completed</li>
+        <li>Mandarin that I spoke: Evidence of copulas; Existential/Universal Quantifiers</li>
+        <li>Other Topics I have been reading: Modality, Binominals, Linking Problem, Causality</li>
+      </ul>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:yuxin.cao.23@alumni.ucl.ac.uk">yuxin.cao.23@alumni.ucl.ac.uk</a></p>
-  </section>
+    <section id="publications">
+      <h2>Proceedings & Work</h2>
+<ul style="list-style: none; padding-left: 0;">
+  <li style="line-height: 1.2; margin-bottom: 8px;">
+    Cao, Y. & Schuster, S. Semantic-Pragmatic Adaptation to Variable Use of Temporal Expressions.<br>
+    In <em>Proceedings of the 47th Annual Meeting of the Cognitive Science Society 
+    (<a href="https://escholarship.org/uc/item/48s4t2g1" target="_blank" rel="noopener noreferrer" style="color: green;">CogSci 2025</a>)</em>.
+  </li>
+</ul>
 
-  <section id="hobbies">
-    <h2>Hobbies</h2>
-    <p>Right I would also need to make the timelines instead of having everything on the same page lol</p>
-  </section>
+
+    </section>
+
+  </div>
+</div>
+  <footer>
+    <p id="last-updated"></p>
+  </footer>
+
+  <script>
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('last-updated').textContent = 'Last Updated: ' + today.toLocaleDateString('en-GB', options);
+  </script>
 
 </body>
 </html>
