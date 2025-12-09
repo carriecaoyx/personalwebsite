@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuxin Cao - Projects</title>
+  <!-- Restore LaTeX font -->
+  <link rel="stylesheet" href="https://latex.vercel.app/style.css" />
+  <style>
+    /* Reuse your styles from the main page */
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    header {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 20px;
+    }
+    header h1 { margin: 0; font-size: 1.25rem; }
+    header nav a {
+      white-space: nowrap;
+      margin-left: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .fade-column {
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .fade-center {
+      height: 70%;
+      width: 20px;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, transparent, white 50%, transparent);
+    }
+    .fade-label {
+      position: absolute;
+      transform: rotate(90deg);
+      font-size: 12px;
+      color: #666;
+      pointer-events: none;
+    }
+    .container {
+      width: 100vw;
+      max-width: 100vw;
+      margin: 0;
+      display: grid;
+      grid-template-columns: minmax(250px, 400px) 60px 1fr;
+      gap: 20px;
+      padding: 20px;
+      background: white;
+    }
+    .left-panel {
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .left-panel img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    h2 { margin-top: 20px; }
+    nav a:visited { color: purple !important; }
+    nav a:hover { color: darkgreen !important; }
+    nav a:focus { outline-color: green !important; }
+    nav a:active { color: limegreen !important; }
+    .right-panel section { margin-bottom: 40px; }
+    .img-fade-wrapper { display: flex; justify-content: center; align-items: center; width: 100%; }
+    .img-fade-wrapper img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+      mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    }
+    @media (max-width: 800px) {
+      .container { grid-template-columns: 1fr; padding: 16px; }
+      .fade-column { display: none; }
+      header { padding: 0 16px; }
+      .left-panel { padding-bottom: 0; }
+    }
+    footer {
+      text-align: center;
+      font-size: 1.0em;
+      color: #555;
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="YuxinCao_CV.pdf" download>CV</a>
+    <a href="#" onclick="alert('Email: carriecaoyx@gmail.com')">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+      <img src="photo.jpg" alt="A photo of me" />
+      <h2>Yuxin Cao</h2>
+      <p>(*´▽｀)ノノ </p>
+  </div>
+
+  <!-- CENTER FADE COLUMN -->
+  <div class="fade-column">
+    <div class="fade-center"></div>
+    <div class="fade-label"></div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <section id="projects">
+      <h2>Here is where I stack linguistics thoughts:</h2>
+      <ul style="list-style-type: disc; padding-left: 20px;">
+        <li>
+          <strong>Mandarin</strong><br>
+          了
+        </li>
+        <li>
+          <strong>Grammaticalization</strong><br>
+          right
+        </li>
+        <li>
+          <strong>HUH</strong><br>
+          ADJECTIVES
+        </li>
+      </ul>
+    </section>
+
+    <section id="other-info">
+      <h2>Notes</h2>
+      <p>These maybe foundational in each fields, but I have not yet explored the field so just putting things here in case one day they go any deeper.</p>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <p id="last-updated"></p>
+</footer>
+
+<script>
+  const today = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('last-updated').textContent = 'Last Updated: ' + today.toLocaleDateString('en-GB', options);
+</script>
+
+</body>
+</html>
