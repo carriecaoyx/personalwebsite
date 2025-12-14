@@ -25,6 +25,12 @@
     header nav a:hover { color: darkgreen !important; }
     header nav a:focus { outline-color: green !important; }
     header nav a:active { color: limegreen !important; }
+    
+    .small-line {
+      font-size: 0.85em;   /* smaller text */
+      line-height: 1.2;    /* optional: tighter spacing */
+    }
+
 
     .container {
       width: 100vw;
@@ -39,7 +45,7 @@
     .left-panel { text-align: center; padding: 20px; }
     .left-panel img {
       width: 100%;
-      max-width: 220px;
+      max-width: 320px;
       height: auto;
       object-fit: cover;
       border-radius: 16px;
@@ -113,7 +119,6 @@
 <body>
 <header>
   <nav>
-    <a href="index.html">About Me</a>
     <a href="projects.html">Projects</a>
     <a href="YuxinCao_CV.pdf" download>CV</a>
     <a href="#" onclick="alert('Email: carriecaoyx@gmail.com')">Contact</a>
@@ -126,7 +131,7 @@
     <img src="photo.jpg" alt="A photo of me" />
     <h2>Yuxin Cao</h2>
     <p>(*^▽^*) </p>
-    <p>My surname is 操 /tsʰɑʊ55/ and my first name is 雨欣 /y214 ɕin55/.</p>
+    <p class="small-line">My surname is 操 /tsʰɑʊ55/ and my first name is 雨欣 /y214 ɕin55/.</p>
   </div>
 
   <!-- CENTER FADE COLUMN -->
@@ -141,8 +146,7 @@
       <h2>About Me: Hello!</h2>
       <ul>
         <li>I am a recent graduate in Linguistics and trying to pursue more study in the field.</li>
-        <li>I am getting myself familiar with modal logic at the moment.</li>
-        <li>I'll make the profile picture larger.</li>
+        <li>At the moment, I am getting myself familiar with modal logic.</li>
       </ul>
     </section>
 
@@ -150,11 +154,11 @@
       <h2>Research Interests: I think about</h2>
       <ul>
         <li>
-          Quantification (both in <span class="keyword" data-cloud="quant">Adults</span> and Children)
+          Measurement (Both in <span class="keyword" data-cloud="quant">Adults</span> and Children)
           <div class="cloud-window"></div>
         </li>
         <li>
-          Part and Whole: When <span class="keyword" data-cloud="part">components</span> sacrifice their meaning and a new entry is created when the whole is completed
+          Part and Whole: When <span class="keyword" data-cloud="part">components</span> cease to be parsed and a new entry is created
           <div class="cloud-window"></div>
         </li>
         <li>
@@ -162,7 +166,7 @@
           <div class="cloud-window"></div>
         </li>
         <li>
-          Other Topics I have been reading: <span class="keyword" data-cloud="other">Modality</span>, Binominals, Linking Problem, Causality
+          Other Topics I have been reading: <span class="keyword" data-cloud="other">Modality</span>, Linking Problem, Causality
           <div class="cloud-window"></div>
         </li>
       </ul>
